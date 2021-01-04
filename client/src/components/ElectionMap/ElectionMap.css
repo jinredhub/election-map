@@ -1,0 +1,140 @@
+.ElectionMap{
+
+}
+.ElectionMap .mapTitle{
+    padding-top: 10px;
+    font-size: 22px;
+    text-align: center;
+    font-family: 'Pragati Narrow', sans-serif;
+    margin-bottom: 6px;
+}
+.ElectionMap .mapDescription{
+    color: #777;
+    text-align: center;
+    font-style: italic;
+}
+.ElectionMap .balanceChartDiv{
+    height: 20px;
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+.ElectionMap .middleBar{
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    background-color: black;
+    left: 50%;
+    top: 0;
+}
+.ElectionMap .headerDiv{
+    display: flex;
+    flex-direction: column;
+}
+.ElectionMap .balanceCount{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.ElectionMap .stateName{
+    text-anchor: middle;
+}
+.ElectionMap .tooltip{
+    position: absolute;
+    background-color: white;
+    max-width: 250px;
+    width: 100%;
+    z-index: 1000;
+    height: 130px;
+    pointer-events: none;
+    border: 1px solid #cbcbcb;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.93);
+    box-shadow: 2px 2px 5px rgb(0,0,0,0.4)
+}
+.ElectionMap .detailHeader{
+    padding: 6px 10px 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'Pragati Narrow', sans-serif;
+}
+.ElectionMap .detailStateName{
+    font-weight: 900;
+    font-size: 18px;
+    font-family: 'Pragati Narrow', sans-serif;
+}
+.ElectionMap .detailElectoralVotes{
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: -0.5px;
+    color: #525252;
+}
+.ElectionMap .detailReportingValue{
+    font-size: 13px;
+}
+.ElectionMap .joeImgContainer, .ElectionMap .trumpImgContainer{
+    display: flex;
+    flex-direction: column;
+    width: 76px;
+    margin: 0 auto;
+}
+.ElectionMap .partyDemUnderImg, .ElectionMap .partyGopUnderImg{
+    height: 16px;
+    background-color: #0471E6;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+.ElectionMap .partyGopUnderImg{
+    background-color: #DE3535;
+}
+
+/*custom table--------------------------------------*/
+.myTable{
+width: 100%;
+border-collapse: collapse;
+}
+.myTable th{
+    font-weight: normal;
+    font-size: 14px;
+    vertical-align: bottom;
+    border-bottom: 1px solid #b9b9b9;
+}
+.myTable th, .myTable td{
+    text-align: right;
+    padding: 6px;
+}
+.myTable th:nth-child(1), .myTable td:nth-child(1){
+    text-align: left;
+    padding: 6px;
+}
+.myTable th:nth-child(8), .myTable td:nth-child(8){
+    border-left: 1px solid #e0e0e0;
+    width: 80px;
+}
+.myTable th:nth-child(7), .myTable td:nth-child(7), .myTable th:nth-child(4), .myTable td:nth-child(4){
+    width: 10%;
+}
+.myTable tr{
+    border-bottom: 1px solid #e0e0e0;
+}
+/* .myTable td:nth-child(2), .myTable td:nth-child(5){
+    width: 90px;
+} */
+.myTable td:nth-child(3), .myTable td:nth-child(6){
+    width: 100px;
+}
+/*end custom table-----------------------------------*/
+
+/*media query----------------------------------------*/
+/*tablets*/
+@media (max-width: 768px){
+    .ElectionMap .votesAndPercentage{
+        font-size: 12px;
+    }
+}
