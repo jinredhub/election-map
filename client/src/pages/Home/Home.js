@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import './Home.css';
-// import * as d3 from 'd3';
 
 import Navbar from '../../components/Navbar/Navbar';
 import ElectionMap from '../../components/ElectionMap/ElectionMap';
+import Footer from '../../components/Footer/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
@@ -30,6 +30,7 @@ class Home extends Component {
                 <Navbar 
                     clicked={this.hamburgerMenuHandler} 
                     isHamburgerMenuOpen={this.state.isHamburgerMenuOpen}
+                    activeLink='Election Map'
                 />
                 
                 <section>
@@ -37,6 +38,8 @@ class Home extends Component {
                         <ElectionMap />
                     </div>
                 </section>
+
+                <Footer />
             </div>
           );
     }

@@ -1,0 +1,28 @@
+.Footer{
+    display: flex;
+    height: 130px;
+    background-color: #93d0e6;
+    color: #626262;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-top:  1px solid #1aaab9;
+}
+.Footer a{
+    border-radius: 100px !important;
+    padding: 13px 16px !important;
+    font-size: 18px !important;
+    color: white !important;
+}
+.Footer .github{
+    background-color: white;
+}
+.Footer .github:hover{
+    background-color: #e0e0e0;
+}
+.Footer .github:active{
+    background-color: #d3d3d3;
+}
+.Footer p{
+    margin: 0;
+}

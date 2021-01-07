@@ -93,6 +93,30 @@
 .ElectionMap .partyGopUnderImg{
     background-color: #DE3535;
 }
+.ElectionMap .mapContainer{
+    position: relative;
+}
+.ElectionMap .loadingIconDiv{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+}
+.ElectionMap .spinAnimation{
+    animation: spin infinite 2s linear;
+    font-size: 100px;
+    color: #4f4f4f;
+}
+@keyframes spin{
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
 
 /*custom table--------------------------------------*/
 .myTable{

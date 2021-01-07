@@ -19,10 +19,12 @@ class electionMap extends Component {
         barchartdata: [],
         isStateDetailPanelVisible: false,
         tableContent: [],
+        isMapSpinnerVisible: true,
     };
 
     componentDidMount(){
         console.log('component did mount, electionMap');
+
         this.createMap();    
 
         // add event listner
@@ -38,6 +40,7 @@ class electionMap extends Component {
         // move tooltip to right for resize
         this.setState({
             stateDetailLeft: 0,
+            isMapSpinnerVisible: true,
         });
         const accessToRef = this.chartRef.current;
 
@@ -243,6 +246,9 @@ class electionMap extends Component {
                     else if(d.properties.name === 'Louisiana'){
                         return '-0.8%';
                     }
+                    else if(d.properties.name === 'Maryland'){
+                        return '-0.4%';
+                    }
                     else{
                         return 0;
                     }
@@ -263,11 +269,18 @@ class electionMap extends Component {
                     else if(d.properties.name === 'Delaware'){
                         return '2%';
                     }
+                    else if(d.properties.name === 'Maryland'){
+                        return '-0.3%';
+                    }
                     else{
                         return '.35em';
                     }
                 })
                 .style('pointer-events', 'none');
+
+                that.setState({
+                    isMapSpinnerVisible: false,
+                })
         });  
     }
 
@@ -324,10 +337,10 @@ class electionMap extends Component {
 
             return <tr key={i}>
                 <td style={{fontWeight: '900', fontSize: '16px'}}>{val.stateName}</td>
-                <td style={{fontWeight: '900', fontSize: '16px', backgroundColor: winner === 'bidenj' ? '#0471E6' : 'transparent', color: winner === 'bidenj' ? 'white' : 'black'}}><span style={{display: 'inline-block', width: '80px'}}>{winner === 'bidenj' ? <FontAwesomeIcon icon='check' color='white' /> : ''} {val.joeBiden[0].percent_display}%</span></td>
+                <td style={{fontWeight: '900', fontSize: '16px', backgroundColor: winner === 'bidenj' ? '#0471E6' : 'transparent', color: winner === 'bidenj' ? 'white' : 'black'}}><span style={{display: 'inline-block', width: '80px'}}>{winner === 'bidenj' ? <FontAwesomeIcon icon='check' color='#78e35d' /> : ''} {val.joeBiden[0].percent_display}%</span></td>
                 <td style={{fontSize: '12px'}}>{this.numberWithCommas(val.joeBiden[0].votes)}</td>
                 <td></td>
-                <td style={{fontWeight: '900', fontSize: '16px', backgroundColor: winner === 'trumpd' ? '#DE3535' : 'transparent', color: winner === 'trumpd' ? 'white' : 'black'}}><span style={{display: 'inline-block', width: '80px'}}>{winner === 'trumpd' ? <FontAwesomeIcon icon='check' color='white' /> : ''} {val.doanldTrump[0].percent_display}%</span></td>
+                <td style={{fontWeight: '900', fontSize: '16px', backgroundColor: winner === 'trumpd' ? '#DE3535' : 'transparent', color: winner === 'trumpd' ? 'white' : 'black'}}><span style={{display: 'inline-block', width: '80px'}}>{winner === 'trumpd' ? <FontAwesomeIcon icon='check' color='#78e35d' /> : ''} {val.doanldTrump[0].percent_display}%</span></td>
                 <td style={{fontSize: '12px'}}>{this.numberWithCommas(val.doanldTrump[0].votes)}</td>
                 <td></td>
                 <td style={{fontSize: '12px'}} className='hide-tablet'>{val.reportingValue} in</td>
@@ -342,6 +355,8 @@ class electionMap extends Component {
                 <div className='mapDescription'>Hover over the map for details</div>
 
                 <div className='mapContainer'>
+                    <div className='loadingIconDiv' style={{display: this.state.isMapSpinnerVisible ? 'flex' : 'none'}}><FontAwesomeIcon className='spinAnimation' icon={['fas', 'circle-notch']} color='black' /></div>
+
                     <div ref={this.chartRef}></div>
                 </div>
 

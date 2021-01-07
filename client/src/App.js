@@ -6,9 +6,10 @@ import Home from './pages/Home/Home';
 
 // fontawesome
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faBars, faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faCheck, faMugHot, faCircleNotch } from '@fortawesome/free-solid-svg-icons';
+import { faGithubAlt } from '@fortawesome/free-brands-svg-icons';
 
-library.add(faBars, faCheck);
+library.add(faBars, faCheck, faGithubAlt, faMugHot, faCircleNotch);
 
 
 class App extends Component {
