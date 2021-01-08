@@ -32,13 +32,12 @@ const navbar = (props) =>{
                 <div className='mobildLinks' style={style}>
                     {displayLinks}
                 </div>
-                <a href="#" className='hamburgerIcon' aria-label="click to open mobile navigation menu" onClick={props.clicked}>
-                    {/* <i className="fas fa-bars"></i> */}
+                <button className='hamburgerIcon' aria-label="click to open mobile navigation menu" onClick={props.clicked}>
                     <FontAwesomeIcon
                         icon={['fas', 'bars']}
                         size='sm'
                     />
-                </a>
+                </button>
             </div>
         </div>
     )

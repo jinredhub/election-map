@@ -4,7 +4,7 @@ import './Home.css';
 import Navbar from '../../components/Navbar/Navbar';
 import ElectionMap from '../../components/ElectionMap/ElectionMap';
 import Footer from '../../components/Footer/Footer';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 class Home extends Component {
@@ -23,7 +23,7 @@ class Home extends Component {
     }
 
     render(){
-        console.log('======================', this.state);
+        // console.log('======================', this.state);
 
         return (
             <div className="Home">

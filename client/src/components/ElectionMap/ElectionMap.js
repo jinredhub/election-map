@@ -23,7 +23,7 @@ class electionMap extends Component {
     };
 
     componentDidMount(){
-        console.log('component did mount, electionMap');
+        // console.log('component did mount, electionMap');
 
         this.createMap();    
 
@@ -37,7 +37,7 @@ class electionMap extends Component {
     }
     
     createMap = () =>{
-        // move tooltip to right for resize
+        // move tooltip to right when resize
         this.setState({
             stateDetailLeft: 0,
             isMapSpinnerVisible: true,
@@ -74,7 +74,7 @@ class electionMap extends Component {
         const that = this;
 
         Promise.all(files.map(url => (url))).then(function(values){
-            console.log('values: ', values);
+            // console.log('values: ', values);
 
             const tableInformation = values[1].data.races.map(val =>{
                 const joeBidenData = val.candidates.filter(candidate =>{
@@ -105,13 +105,10 @@ class electionMap extends Component {
             });
 
             // topojson feature converts
-            // always pass it data, then data.objects.something
             const states = topojson.feature(values[0], values[0].objects.states).features;
 
-            console.log('states: ', states);
+            // console.log('states: ', states);
 
-            // election, state:               values[1].data.races[i].state_name === 'California';
-            // election, candidates in state: values[1].data.races[i].candidates
             states.forEach(function(state_value, state_index){
                 values[1].data.races.forEach(function(race_value, race_index){
                     values[2].forEach(function(stateName_value, stateName_index){
@@ -128,7 +125,7 @@ class electionMap extends Component {
                 });
             });
 
-            console.log('updated states: ', states);
+            // console.log('updated states: ', states);
     
             // add a path for each state
             worldMapSvg.selectAll('.state')
@@ -158,9 +155,7 @@ class electionMap extends Component {
                     }
                 })
                 .on('mouseover', function(d){
-                    // const svgRect = document.querySelector('#renderMap').getBoundingClientRect();
-                    // const documentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                    console.log('check d: ', d);
+                    // console.log('check d: ', d);
 
                     const candidateArray = [];
                     d.properties.candidates.forEach((val, i) => {
@@ -209,7 +204,6 @@ class electionMap extends Component {
                 .attr('y', function(d){
                     return worldMapPath.centroid(d)[1] ? worldMapPath.centroid(d)[1] : 0;
                 })
-                // .attr('text-anchor', 'middle')
                 .attr('font-size', '9px')
                 .attr('font-weight', 'bold')
                 .attr('fill', function(d){
@@ -289,7 +283,7 @@ class electionMap extends Component {
     }
     
     render(){
-        console.log('electoinMap==========================', this.state);
+        // console.log('electoinMap==========================', this.state);
 
         const balanceHeader = <div className='headerDiv'>
             <div className='balanceCount'>
@@ -369,7 +363,7 @@ class electionMap extends Component {
                                 <th>States</th>
                                 <th>
                                     <div className='joeImgContainer'>
-                                        <img src={joeImg}  style={{width: '100%'}} />
+                                        <img src={joeImg}  style={{width: '100%'}} alt='joe biden' />
                                         <div className='partyDemUnderImg'>
                                             DEM
                                         </div>
@@ -380,7 +374,7 @@ class electionMap extends Component {
                                 <th></th>
                                 <th>
                                     <div className='trumpImgContainer'>
-                                        <img src={trumpImg}  style={{width: '100%'}} />
+                                        <img src={trumpImg}  style={{width: '100%'}} alt='donald trump' />
                                         <div className='partyGopUnderImg'>
                                             GOP
                                         </div>

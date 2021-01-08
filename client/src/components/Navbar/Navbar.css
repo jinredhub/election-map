@@ -47,7 +47,8 @@
     padding: 14px 16px;
     font-size: 17px;
     color: #1b1c1d;
-
+    border: none;
+    background-color: transparent;
 }
 
 
