@@ -25,15 +25,33 @@ class electionMap extends Component {
     componentDidMount(){
         // console.log('component did mount, electionMap');
 
+        const windowWidth = window.innerWidth;
+        this.setState({
+            windowWidth: windowWidth
+        });
+
         this.createMap();    
 
         // add event listner
-        window.addEventListener('resize', this.createMap.bind(this));
+        window.addEventListener('resize', () =>{
+            // only trigger when window width changed
+            const oldWindowWidth = this.state.windowWidth;
+            const newWindowWidth = window.innerWidth;
+            if(newWindowWidth !== oldWindowWidth){
+                this.setState({
+                    windowWidth: newWindowWidth
+                });
+
+                this.createMap();
+            }
+        });
     }
 
     componentWillUnmount(){
         // perform any necessary clanup before this componetn is unmounted and destroyed
-        window.removeEventListener('resize', this.createMap.bind(this));
+        window.addEventListener('resize', () =>{
+            this.createMap();
+        });
     }
     
     createMap = () =>{
