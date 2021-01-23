@@ -10,7 +10,7 @@ const navbar = (props) =>{
         {'href': 'https://jinredhub.github.io/arpeggios/', 'name': 'Arpeggios'},
         {'href': 'https://jinredhub.github.io/daw/', 'name': 'DAW'},
         {'href': 'https://jinredhub.github.io/us-map-covid-19/', 'name': 'Covid Map'},
-        {'href': 'https://jinredhub.github.io/us-map-covid-19/', 'name': 'Election Map'},
+        {'href': 'https://us-election-map.herokuapp.com/', 'name': 'Election Map'},
     ];
 
     const displayLinks = links.map((val, i) =>{
