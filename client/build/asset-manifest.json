@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.981528a9.chunk.css",
+    "main.css": "/static/css/main.11cb7053.chunk.css",
     "main.js": "/static/js/main.82c1425f.chunk.js",
     "main.js.map": "/static/js/main.82c1425f.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.ccddca6c.js",
@@ -10,7 +10,7 @@
     "static/js/3.bd3616f9.chunk.js": "/static/js/3.bd3616f9.chunk.js",
     "static/js/3.bd3616f9.chunk.js.map": "/static/js/3.bd3616f9.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.981528a9.chunk.css.map": "/static/css/main.981528a9.chunk.css.map",
+    "static/css/main.11cb7053.chunk.css.map": "/static/css/main.11cb7053.chunk.css.map",
     "static/js/2.b2f09b7a.chunk.js.LICENSE.txt": "/static/js/2.b2f09b7a.chunk.js.LICENSE.txt",
     "static/media/bidenj.8156bbc2.png": "/static/media/bidenj.8156bbc2.png",
     "static/media/trumpd.7e5680b1.png": "/static/media/trumpd.7e5680b1.png"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.ccddca6c.js",
     "static/js/2.b2f09b7a.chunk.js",
-    "static/css/main.981528a9.chunk.css",
+    "static/css/main.11cb7053.chunk.css",
     "static/js/main.82c1425f.chunk.js"
   ]
 }
