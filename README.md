@@ -4,4 +4,4 @@
 
 ## visit website
 
-https://us-election-map.herokuapp.com/
+https://election-map.up.railway.app/
