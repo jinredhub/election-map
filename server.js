@@ -22,6 +22,6 @@ app.get("*", function(req, res) {
 // routes
 // require("./routes/twitter-api-routes.js");
 
-app.listen(port, function() {
+app.listen(port, "0.0.0.0", function() {
   console.log("listening on port", port);
 });
